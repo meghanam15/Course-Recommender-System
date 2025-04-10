@@ -30,54 +30,61 @@ In today’s rapidly evolving job market, staying updated with relevant skills i
 
 2. 📂 Data Preparation
 
-Due to the large size of datasets required for job trend and course analysis(we had merged more than 3-4 datasets), we recommend downloading publicly available datasets from **Kaggle**:
-some are below,
-- 📌 [Job Postings Dataset](https://www.kaggle.com/datasets/arshkon/linkedin-job-postings) – Contains job listings with titles, descriptions, required skills, and locations.
-- 📌 [Online Courses Dataset](https://www.kaggle.com/datasets/emrebayirr/udemy-course-dataset-categories-ratings-and-trends) – Includes information about online courses such as title, skills taught, ratings, number of subscribers, and more.
+   Due to the large size of datasets required for job trend and course analysis(we had merged more than 3-4 datasets), we recommend downloading publicly available 
+   datasets from **Kaggle**:
+   some are below,
+   - 📌 [Job Postings Dataset](https://www.kaggle.com/datasets/arshkon/linkedin-job-postings) – Contains job listings with titles, descriptions, required skills, 
+   and locations.
+   - 📌 [Online Courses Dataset](https://www.kaggle.com/datasets/emrebayirr/udemy-course-dataset-categories-ratings-and-trends) – Includes information about online 
+   courses such as title, skills taught, ratings, number of subscribers, and more.
 
 3. ### ▶️ Run the App
 
-Start the Flask server:
+   Start the Flask server:
 
-```bash
-python app.py
-
-and it goes to http://localhost:5000
+   ```bash
+   python app.py and it goes to http://localhost:5000
 
 ## 🎯 Benefits
 
-- ✅ **Career Alignment**  
-  Helps users align their skills with real-time job market demands.
+   - ✅ **Career Alignment**  
+     Helps users align their skills with real-time job market demands.
 
-- 📈 **Educational Efficiency**  
-  Recommends only relevant courses, saving time and effort.
+   - 📈 **Educational Efficiency**  
+     Recommends only relevant courses, saving time and effort.
 
-- 🔗 **Bridging the Gap**  
-  Connects the dots between education and employment opportunities.
+   - 🔗 **Bridging the Gap**  
+     Connects the dots between education and employment opportunities.
 
-- 💡 **Data-Driven Decisions**  
-  Enables users to make informed learning choices based on job trends.
+   - 💡 **Data-Driven Decisions**  
+     Enables users to make informed learning choices based on job trends.
 
 ---
 
 ## 🔧 Future Improvements
 
-- 🔄 **Real-Time Job Data Integration**  
-  Fetch and analyze live job postings using job board APIs (e.g., LinkedIn, Indeed).
+   - 🔄 **Real-Time Job Data Integration**  
+      Fetch and analyze live job postings using job board APIs (e.g., LinkedIn, Indeed).
 
-- 🧠 **Advanced Recommendation Models**  
-  Incorporate deep learning or transformers for improved personalization.
+   - 🧠 **Advanced Recommendation Models**  
+      Incorporate deep learning or transformers for improved personalization.
 
-- ⭐ **User Feedback System**  
-  Allow users to rate or like courses, refining future recommendations.
+   - ⭐ **User Feedback System**  
+      Allow users to rate or like courses, refining future recommendations.
 
-- 👥 **User Profiles and History**  
-  Save user preferences, past searches, and recommendations.
+   - 👥 **User Profiles and History**  
+      Save user preferences, past searches, and recommendations.
 
-- 🌐 **Multi-language Support**  
-  Make the system accessible to a broader, global audience.
+   - 🌐 **Multi-language Support**  
+      Make the system accessible to a broader, global audience.
 
-- 📬 **Email Notifications**  
-  Notify users about new relevant courses or changing job trends.
+   - 📬 **Email Notifications**  
+      Notify users about new relevant courses or changing job trends.
 
+## 🙏 Thank You
+
+Thank you for checking out the **Course Recommender System based on Job Trends**!  
+I hope this tool helps you or others find the right courses to stay competitive in today’s dynamic job market.
+
+Feel free to contribute, suggest improvements, or share your feedback. 🚀
 
