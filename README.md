@@ -15,10 +15,10 @@ In today’s rapidly evolving job market, staying updated with relevant skills i
 
 ## 🛠 Technologies Used
 
-- **Python** – Core language for data processing and algorithm development
-- **Flask** – Web framework for backend development
-- **HTML/CSS/JavaScript** – Frontend for responsive UI
-- **Pandas, NumPy, scikit-learn** – Libraries for data manipulation and machine learning
+- Python – Core language for data processing and algorithm development
+- Flask – Web framework for backend development
+- HTML and CSS – Frontend for better UI
+- Pandas, NumPy, scikit-learn – Libraries for data manipulation and machine learning
 
 ---
 
