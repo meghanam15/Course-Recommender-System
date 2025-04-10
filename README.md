@@ -30,7 +30,7 @@ In today’s rapidly evolving job market, staying updated with relevant skills i
 
 2. 📂 Data Preparation
 
-   Due to the large size of datasets required for job trend and course analysis(we had merged more than 3-4 datasets), we recommend downloading publicly available 
+   Due to the large size of datasets required for job trend and course analysis(I had merged more than 3-4 datasets), I recommend downloading publicly available 
    datasets from **Kaggle**:
    some are below,
    - 📌 [Job Postings Dataset](https://www.kaggle.com/datasets/arshkon/linkedin-job-postings) – Contains job listings with titles, descriptions, required skills, 
