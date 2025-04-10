@@ -44,6 +44,8 @@ In today’s rapidly evolving job market, staying updated with relevant skills i
 
    ```bash
    python app.py and it goes to http://localhost:5000
+   
+---
 
 ## 🎯 Benefits
 
@@ -81,10 +83,11 @@ In today’s rapidly evolving job market, staying updated with relevant skills i
    - 📬 **Email Notifications**  
       Notify users about new relevant courses or changing job trends.
 
+---
+
 ## 🙏 Thank You
 
 Thank you for checking out the **Course Recommender System based on Job Trends**!  
-I hope this tool helps you or others find the right courses to stay competitive in today’s dynamic job market.
 
 Feel free to contribute, suggest improvements, or share your feedback. 🚀
 
