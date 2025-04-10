@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Based Job & Course Recommendations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Link to the CSS file from the static folder using Flask's url_for -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Skill-Based Job & Course Recommendations</h1>
+    </header>
+
+    <div class="container">
+        <!-- Skill Input Form -->
+        <form method="POST">
+            <input type="text" name="skill_input" id="skill_input" placeholder="Enter a skill" value="{{ skill_input }}" required>
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- Display Results -->
+        <div class="result-container">
+            <!-- Job Cluster Result -->
+            {% if cluster_result %}
+                <div class="job-info">
+                    <h2>Job Cluster Information</h2>
+                    <p><strong>Cluster:</strong> {{ cluster_result }}</p>
+                    <p><strong>Company:</strong> {{ company_result }}</p>
+                </div>
+            {% endif %}
+
+            <!-- Error message for job clustering -->
+            {% if error_message %}
+                <p class="error-message">{{ error_message }}</p>
+            {% endif %}
+
+            <!-- Course Recommendation -->
+            {% if recommended_courses %}
+                <div class="course-info">
+                    <h2>Recommended Courses</h2>
+                    <div class="course-list">
+                        {% for course in recommended_courses %}
+                            <div class="course-card">
+                                <h3>{{ course.title }}</h3>
+                                <p><strong>Rating:</strong> {{ course.rating }}</p>
+                                <a href="{{ course.url }}" target="_blank">View Course</a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Skill-Based Recommendations</p>
+    </footer>
+</body>
+</html>

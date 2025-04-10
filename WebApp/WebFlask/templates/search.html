@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <style>
+        /* Global Styles */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            background-image: url('{{ url_for("static", filename="images/back.jpg") }}');
+            background-size: cover; /* Ensures the image covers the entire page */
+            background-position: center center; /* Centers the image */
+            background-attachment: fixed; /* Keeps the image fixed while scrolling */
+            background-repeat: no-repeat; /* Prevents repeating the image */
+        }
+
+        header {
+            background-color: rgba(39, 65, 92, 0.8); /* Semi-transparent #3973ac */
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.5em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        header .back-home-button {
+            margin-top: 10px;
+            margin-left: auto; /* Align the button to the right */
+            padding: 10px 20px;
+            background-color: #3973ac; /* Changed to #3973ac */
+            color: white;
+            font-size: 0.8em;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        header .back-home-button:hover {
+            background-color: #2c5f8f; /* Darker shade of #3973ac on hover */
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* Form Styling */
+        form {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input[type="text"] {
+            padding: 12px;
+            width: 60%;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        button {
+            padding: 12px 25px;
+            background-color: #3973ac; /* Changed to #3973ac */
+            color: white;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2c5f8f; /* Darker shade of #3973ac on hover */
+        }
+
+        .error {
+            color: #e74c3c;
+            font-size: 1.2em;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Job Cards */
+        .job-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .job-card {
+            border: 1px solid #ddd;
+            border-left: 5px solid #3973ac; /* Changed to #3973ac */
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .job-card .item {
+            font-weight: bold;
+            color: #3973ac; /* Changed to #3973ac */
+        }
+
+        .job-card .value {
+            color: #333;
+        }
+
+        /* Course Cards */
+        .recommended-courses {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .course-card {
+            padding: 15px;
+            background-color: #f0f8ff;
+            border-left: 5px solid #3973ac; /* Changed to #3973ac */
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            width: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .course-card a {
+            color: #3973ac; /* Changed to #3973ac */
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .course-card a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #2c5f8f; /* Darker shade of #3973ac for footer */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 80px; /* Increased margin-top to make footer lower */
+            font-size: 0.9em;
+        }
+
+        /* Back to Home Button */
+        .back-home-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Course Recommender and Job Info</h1>
+        <a href="{{ url_for('home') }}" class="back-home-button">Back to Home</a>
+    </header>
+
+    <div class="content">
+        <form method="POST" action="{{ url_for('search') }}">
+            <h2>Search for Job Info and Courses</h2>
+            <input type="text" placeholder="Enter a skill or skills" name="search_query" value="{{ skill_input or '' }}">
+            <button type="submit">Search</button>
+        </form>
+
+        {% if error_message %}
+            <p class="error">{{ error_message }}</p>
+        {% endif %}
+
+        {% if search_result %}
+            <h3>Matching Job Information</h3>
+            <div class="job-container">
+                {% for result in search_result %}
+                    <div class="job-card">
+                        <p><span class="item">Company:</span> <span class="value">{{ result['company'] }}</span></p>
+                        <p><span class="item">Class:</span> <span class="value">{{ result['cluster_name'] }}</span></p>
+                        <p><span class="item">Job Level:</span> <span class="value">{{ result['job level'] }}</span></p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% if recommended_courses %}
+            <h3>Recommended Courses</h3>
+            <div class="recommended-courses">
+                {% for course in recommended_courses %}
+                    <div class="course-card">
+                        <a href="{{ course['url'] }}" target="_blank">{{ course['title'] }}</a>
+                        <p class="rating">Rating: {{ course['rating'] }}</p>
+                        <p class="item">Score: {{ course['score'] }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+
+    <footer>
+        <!-- You can add footer content here if needed -->
+    </footer>
+</body>
+</html>
