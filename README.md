@@ -5,7 +5,7 @@ A web application that analyzes real job market data to recommend relevant onlin
 ## Screenshots
 
 **Home Page**
-![Home](static/images/Screenshot_home.jpeg)
+![Home](static/images/Screenshot_homepage.jpeg)
 
 **Search Results - Python**
 ![Python Search](static/images/Screenshot_search_python.jpeg)
