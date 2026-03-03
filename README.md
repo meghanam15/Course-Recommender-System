@@ -2,6 +2,20 @@
 
 A web application that analyzes real job market data to recommend relevant online courses based on in-demand skills.
 
+## Screenshots
+
+**Home Page**
+![Home](static/images/screenshot_home.jpg)
+
+**Search Results - Python**
+![Python Search](static/images/screenshot_search_python.jpg)
+
+**Search Results - HTML CSS**
+![HTML CSS Search](static/images/screenshot_search_htmlcss.jpg)
+
+**Dashboard - Job Market Insights**
+![Dashboard](static/images/screenshot_dashboard.jpg)
+
 ## What It Does
 
 - User enters a skill (e.g. "Python", "Machine Learning", "SQL")
@@ -32,9 +46,12 @@ Course-Recommender-System/
 ├── app.py               # Main Flask application
 ├── courserec.py         # ML recommendation engine
 ├── requirements.txt     # Dependencies
+├── notebooks/
+│   ├── datapreprocess.ipynb
+│   ├── exploratorydataanalysis.ipynb
+│   └── courseskill.ipynb
 ├── data/
-│   ├── company_cluster.csv   # Processed job postings with clusters
-│   └── ufinal.csv            # Processed course dataset
+│   └── README.txt       # Dataset download instructions
 ├── templates/
 │   ├── index.html
 │   ├── search.html
@@ -74,8 +91,8 @@ Due to file size, datasets are not included in the repo. Download from Kaggle:
 - Skill-based job market search
 - Hybrid course recommendations (content + collaborative filtering)
 - Handles edge cases (C++ vs C vs C#, AI/ML keywords)
-- Visual dashboard with job trend insights
+- Visual dashboard with 10 job market insight charts
 
 ## Author
 
-Meghana M — [LinkedIn](https://linkedin.com/in/your-profile) | [GitHub](https://github.com/meghanam15)
+Meghana M — [LinkedIn](https://in.linkedin.com/in/meghana-m-752747267) | [GitHub](https://github.com/meghanam15)
