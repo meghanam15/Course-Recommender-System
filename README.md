@@ -5,16 +5,16 @@ A web application that analyzes real job market data to recommend relevant onlin
 ## Screenshots
 
 **Home Page**
-![Home](static/images/screenshot_home.jpeg)
+![Home](static/images/Screenshot_home.jpeg)
 
 **Search Results - Python**
-![Python Search](static/images/screenshot_search_python.jpeg)
+![Python Search](static/images/Screenshot_search_python.jpeg)
 
 **Search Results - HTML CSS**
-![HTML CSS Search](static/images/screenshot_search_htmlcss.jpeg)
+![HTML CSS Search](static/images/Screenshot_search_htmlcss.jpeg)
 
 **Dashboard - Job Market Insights**
-![Dashboard](static/images/screenshot_dashboard.jpeg)
+![Dashboard](static/images/Screenshot_dashboard.jpeg)
 
 ## What It Does
 
