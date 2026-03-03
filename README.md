@@ -5,7 +5,7 @@ A web application that analyzes real job market data to recommend relevant onlin
 ## What It Does
 
 - User enters a skill (e.g. "Python", "Machine Learning", "SQL")
-- System searches 80,000+ job postings to find matching companies and job levels
+- System searches 89,380 job postings to find matching companies and job levels
 - Recommends top 5 courses using a hybrid ML approach (TF-IDF + KNN + SVD)
 - Dashboard displays visual insights from job market analysis
 
@@ -29,7 +29,7 @@ A web application that analyzes real job market data to recommend relevant onlin
 
 ```
 Course-Recommender-System/
-├── finalapp.py          # Main Flask application
+├── app.py               # Main Flask application
 ├── courserec.py         # ML recommendation engine
 ├── requirements.txt     # Dependencies
 ├── data/
@@ -58,7 +58,7 @@ pip install -r requirements.txt
 # Download datasets from Kaggle (links below) and place in data/
 
 # 4. Run the app
-python finalapp.py
+python app.py
 ```
 
 Open browser at `http://localhost:5000`
